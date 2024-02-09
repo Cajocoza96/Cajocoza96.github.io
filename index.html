@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <!-- Encabezado de Content Security Policy (CSP) -->
+     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+
+     <!-- Encabezado Strict-Transport-Security (HSTS) -->
+     <meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains; preload">
+    <title>Jujutsu Kaisen Cronometro</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header class="contenedor-titulo">
+        <h2 class="texto-neon">
+            Jujutsu Kaisen Cronometro
+        </h2>
+    </header>
+    <div class="iContenedor">
+        <div class="iCronometro">
+            <span class="iHora">00</span>
+            <span class="iDosPuntos">:</span>
+            <span class="iMinute">00</span>
+            <span class="iDosPuntos">:</span>
+            <span class="iSecond">00</span>
+            <span class="iDosPuntos ms-iDosPuntos">:</span>
+            <span class="iMillisecond">00</span>
+        </div>
+        <span></span>
+        <div class="iBotones">
+            <div class="icono-circulo iIniciar">
+                <div class="triangulo"></div>
+            </div>
+
+            <div class="icono-circulo iPausar">
+                <div class="barra-1"></div>
+                <div class="barra-2"></div>
+            </div>
+
+            <div class="icono-circulo iReiniciar">
+                <div class="cuadrado"></div>
+            </div>
+        </div>
+
+        <!-- Este es el interruptor -->
+        <div class="contenedor-interruptor">
+        <input type="checkbox" id="modoInterruptor" class="modo-interruptor">
+        <label for="modoInterruptor" class="interruptor-etiqueta"></label>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+
+</html>

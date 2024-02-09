@@ -1,0 +1,356 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+body {
+    background-color: #ffffff;
+}
+
+.contenedor-titulo {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+}
+
+.contenedor-titulo h2 {
+    text-align: center;
+}
+
+.texto-neon {
+    text-transform: uppercase;
+    font-size: 2.5rem;
+    cursor: pointer;
+    font-family: sans-serif;
+    -webkit-text-stroke: 3px #000000;
+    color: #ffffff;
+    text-shadow: 0 0 10px #a945c7, 0 0 40px #a945c7, 0 0 80px #a945c7;
+    background-size: 200%;
+}
+
+.iContenedor .iCronometro {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    border-radius: 50%;
+    height: 45vh;
+    width: 45vh;
+    margin: 0 auto;
+    border: 3px solid #d41c8e;
+    box-shadow: 0 0 10px #a945c7, 0 0 40px #a945c7, 0 0 80px #a945c7;
+    background-image: url("../assets/img/Jujutsu Kaisen Temp 1 Cap 6.jpg");
+    background-size: contain;
+}
+
+.iContenedor .iCronometro span {
+    width: 5.5vh;
+    text-align: center;
+    font-size: 2.5rem;
+    font-family: sans-serif;
+    color: #ffffff;
+    -webkit-text-stroke: 3px #000000;
+    font-weight: bold
+}
+
+.iCronometro span .ms-iDosPuntos,
+.iCronometro span .iMillisecond {
+    color: #000000;
+}
+
+.iContenedor .iBotones {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: row;
+
+    text-align: center;
+    margin-top: 20px;
+}
+
+/*icono circular para los botones*/
+
+.icono-circulo{
+    display: flex;
+    align-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    width: 10vh;
+    height: 10vh;
+    background-color: #ffffff;
+    border: 3px solid #000000;
+    border-radius: 50%;
+    margin-right: 5px;
+    cursor: pointer;
+    box-shadow: 0 0 10px #a945c7, 0 0 40px #a945c7, 0 0 80px #a945c7;
+}
+
+
+/*....Icono que va a dentro del icono de iniciar.....*/
+
+.triangulo{
+    width: 30px;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 30px solid #000000;
+    transform: rotate(90deg);
+    cursor: pointer;
+    margin-left: 5px;
+}
+
+/*....Icono que va a dentro del icono de pausar.....*/
+
+.barra-1{
+    width: 10px;
+    height: 27px;
+    background-color: #000000;
+    border: 1px solid #000000;
+    margin-right: 5px;
+}
+
+.barra-2{
+    width: 10px;
+    height: 27px;
+    background-color: #000000;
+    border: 1px solid #000000;
+}
+
+
+/*...............Icono que va a dentro del icono de pausar.........*/
+
+.cuadrado{
+    width: 25px;
+    height: 25px;
+    background-color: #000000;
+    border: 1px solid #000000;
+    border-radius: 3px;
+}
+
+
+/* Esto es para el interruptor */
+.contenedor-interruptor{
+    display: flex;
+    align-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+#modoInterruptor{
+    display: none;
+}
+
+.interruptor-etiqueta{
+    display: inline-block;
+
+    cursor: pointer;
+    position: relative;
+    width: 70px;
+    height: 40px;
+    background-color: #ffffff; /* Color de fondo para el modo oscuro */
+    border-radius: 20px;
+    border: 3px solid #000000;
+}
+  
+.interruptor-etiqueta::before {
+    content: '\2600'; /* Código Unicode del sol */
+    font-size: 25px;
+    color: #FFD700; /* Color del sol */
+    position: absolute;
+    top: 50%;
+    left: 2px;
+    transform: translateY(-50%);
+}
+
+.interruptor-etiqueta::after {
+    content: '\1F319'; /* Código Unicode de la luna */
+    font-size: 25px;
+    color: #778899; /* Color de la luna */
+    position: absolute;
+    top: 50%;
+    right: 2px;
+    transform: translateY(-50%);
+    opacity: 0; /* Inicialmente, la luna está oculta */
+}
+
+.modo-interruptor:checked + .interruptor-etiqueta::before {
+    opacity: 0; /* Cuando se activa el modo oscuro, ocultar el sol */
+}
+
+.modo-interruptor:checked + .interruptor-etiqueta::after {
+    opacity: 1; /* Cuando se activa el modo oscuro, mostrar la luna */
+}
+
+  
+/*...............Estilos para el modo oscuro............................. */
+
+body.modo-oscuro {
+    background-color: #000000; /* Color de fondo para el modo oscuro */
+    
+}
+
+.modo-oscuro .texto-neon{
+    -webkit-text-stroke: 2px #ffffff;
+    color: #000000;
+    text-shadow: 0 0 10px #8a86899a, 0 0 40px #8a86899a, 0 0 80px #8a86899a;
+}
+
+
+.modo-oscuro .iContenedor .iCronometro {
+    border: 3px solid #ffffff;
+    box-shadow: 0 0 10px #8a86899a, 0 0 40px #8a86899a, 0 0 80px #8a86899a;
+}
+
+.modo-oscuro .iContenedor .iCronometro span {
+    color: #000000;
+    -webkit-text-stroke: 2px #ffffff;
+}
+
+.modo-oscuro .icono-circulo{
+    background-color: #8a86892d;
+    border: 3px solid  #ffffff;
+    box-shadow: 0 0 10px #8a86899a, 0 0 40px #8a86899a, 0 0 80px #8a86899a;
+}
+
+.modo-oscuro .triangulo{
+    border-bottom: 30px solid #ffffff;
+}
+
+.modo-oscuro .barra-1{
+    background-color: #ffffff;
+    border: 1px solid #ffffff;
+}
+
+.modo-oscuro .barra-2{
+    background-color: #ffffff;
+    border: 1px solid #ffffff;
+}
+
+.modo-oscuro .cuadrado{
+    background-color: #ffffff;
+    border: 1px solid #ffffff;
+}
+
+.modo-oscuro .interruptor-etiqueta{
+    background-color: #8a86892d; 
+    border: 3px solid #ffffff; 
+}
+
+/*......Orientacion Landscape (horizontal) en dispositivo moviles......*/
+
+/*...............Modo claro......................................*/
+@media screen and (max-width: 767px) and (orientation: landscape) {
+    .contenedor-titulo {
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .texto-neon {
+        font-size: 2rem;
+        -webkit-text-stroke: 2.5px #000000;
+        text-shadow: 0 0 9px #a945c7, 0 0 39px #a945c7, 0 0 79px #a945c7;
+        background-size: 200%;
+    }
+
+    .iContenedor{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    .iContenedor .iCronometro {
+        height: 83vh;
+        width: 83vh;
+        border: 3px solid #d41c8e;
+    }
+    
+    .iContenedor .iCronometro span {
+        width: 10vh;
+        font-size: 2.5rem;
+        -webkit-text-stroke: 3px #000000;
+
+    }
+    
+    .iContenedor .iBotones {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        margin-top: 20px;
+    }
+
+    /*icono circular para los botones*/
+    
+    .icono-circulo{
+        width: 15vh;
+        height: 15vh;
+        border: 3px solid #000000;
+        margin-top: 10px;
+        margin-left: -100px;
+        box-shadow: 0 0 10px #a945c7, 0 0 40px #a945c7, 0 0 80px #a945c7;
+    }
+
+
+    /*.......Corregir esto........*/
+    .interruptor-etiqueta{
+        margin-top: 15px;
+        margin-right: 15px;
+        margin-left: -15px;
+    }
+
+    /*...............Modo oscuro......................................*/
+
+    .modo-oscuro .texto-neon{
+        -webkit-text-stroke: 1.5px #ffffff;
+        color: #000000;
+        text-shadow: 0 0 9px #8a86899a, 0 0 39px #8a86899a, 0 0 79px #8a86899a;
+    }
+
+}
+
+
+/*..................Diseño para tabletas, escritorio............................*/
+@media screen and (min-width: 768px) and (orientation: landscape) {
+    .iContenedor .iCronometro {
+        height: 65vh;
+        width: 65vh;
+        border: 3px solid #d41c8e;
+    }
+
+    .iContenedor .iCronometro span {
+        width: 8vh;
+        font-size: 3rem;
+    }
+
+    .contenedor-titulo {
+        margin-top: 1.5rem;
+    }
+
+    .texto-neon {
+        font-size: 3rem;
+    }
+
+    /*.......Corregir esto........*/
+    .interruptor-etiqueta{
+        margin-top: -100px;
+        margin-right: -500px;
+        
+    }
+    
+}
